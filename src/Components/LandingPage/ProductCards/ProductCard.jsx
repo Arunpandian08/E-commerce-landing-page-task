@@ -39,7 +39,7 @@ const ProductCard = ({ addToCart, searchTerm, setSelectedProduct, renderStarRati
 
     const filteredProducts = useMemo(() => {
         return products.filter(product => {
-            const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
+            const matchesSearch = product.category.toLowerCase().includes(searchTerm.toLowerCase());
             const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
             return matchesSearch && matchesCategory;
         });
