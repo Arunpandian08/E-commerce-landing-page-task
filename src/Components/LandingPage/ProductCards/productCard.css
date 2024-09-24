@@ -1,0 +1,96 @@
+.product-card-sticky {
+    margin-top: 2rem;
+    position: sticky;
+    top: 160px;
+    height: calc(100vh - 160px);
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .product-card-sticky {
+        position: static;
+        min-height: 100vh !important;
+    }
+
+    .product-column {
+        position: static;
+        overflow-y: auto;
+        height: calc(100vh - 300px) !important;
+    }
+
+    .filter-column {
+        margin-bottom: 1rem;
+        height: fit-content !important;
+        overflow-y: scroll;
+    }
+
+    .product-card-container {
+        height: 100%;
+        padding-right: 0px !important;
+    }
+}
+
+.filter-column,.product-column{
+    height: 100%;
+    overflow-y: auto;
+}
+
+.product-card-container {
+    padding-right: 15px;
+}
+
+.title {
+    transition: all 0.5s ease-in-out;
+}
+
+.category:hover,
+.card-title:hover {
+    color: #ff4500;
+}
+
+.card-img-top {
+    margin-top: 0;
+    padding-top: 0;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .card-img-top {
+    transform: translate3d(0, -10px, 0);
+}
+
+/* Custom scrollbar styles for webkit browsers */
+.filter-column::-webkit-scrollbar,
+.product-column::-webkit-scrollbar {
+    width: 2px;
+}
+
+.filter-column::-webkit-scrollbar-track,
+.product-column::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.filter-column::-webkit-scrollbar-thumb,
+.product-column::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 0px;
+}
+
+.filter-column::-webkit-scrollbar-thumb:hover,
+.product-column::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body .mt-auto {
+    margin-top: auto;
+}

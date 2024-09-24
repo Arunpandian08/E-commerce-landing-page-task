@@ -1,0 +1,56 @@
+.product-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.product-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-modal-overlay.active .product-modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.product-modal-content img {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.card-img-top {
+    margin-top: 0;
+    padding-top: 0;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-img-top:hover{
+    transform: translate3d(0, -10px, 0);
+}

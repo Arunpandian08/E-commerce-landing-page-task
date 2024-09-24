@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollable-container {
+  overflow-y: auto;
+  overflow-x: auto;
+  height: 100vh;
+}
+
+/* Style the custom scrollbar */
+.scrollable-container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Custom scrollbar styles for webkit browsers */
+.filter-column::-webkit-scrollbar,
+.product-column::-webkit-scrollbar {
+  width: 2px;
+}
+
+.filter-column::-webkit-scrollbar-track,
+.product-column::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.filter-column::-webkit-scrollbar-thumb,
+.product-column::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0px;
+}
+
+.filter-column::-webkit-scrollbar-thumb:hover,
+.product-column::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
