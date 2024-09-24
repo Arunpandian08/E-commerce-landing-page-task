@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './ProductModal.css'
+import './productModal.css'
 
 const ProductModal = ({ product, closeModal, addToCart, renderStarRating }) => {
     const [isActive, setIsActive] = useState(false)
