@@ -16,7 +16,7 @@ const ProductCard = ({ addToCart, searchTerm, setSelectedProduct, renderStarRati
     const fetchProducts = async () => {
         setIsLoading(true);
         try {
-            const response = await axios.get('http://localhost:5000/api/product/get');
+            const response = await axios.get('https://e-commerce-landing-page-server.onrender.com/api/product/get');
             const fetchedProducts = response.data.products;
             setProducts(fetchedProducts);
 
