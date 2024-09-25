@@ -41,8 +41,8 @@ const ProductCard = ({ addToCart, searchTerm, setSelectedProduct, renderStarRati
         return products.filter(product => {
             const cleanSearchTerm = searchTerm.toLowerCase().replace(/'/g, '');
             const matchesSearch = product => product.category.toLowerCase().replace(/'/g, '').includes(cleanSearchTerm)
-            const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-            return matchesSearch && matchesCategory;
+            const matchesCategory = selectedCategories.length === 0 || selectedCategories.map(c => c.toLowerCase()).includes(product.category.toLowerCase())
+            return products.filter(product => matchesSearch(product) && matchesCategory)
         });
     }, [products, searchTerm, selectedCategories]);
 
