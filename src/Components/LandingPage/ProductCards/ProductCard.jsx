@@ -39,10 +39,9 @@ const ProductCard = ({ addToCart, searchTerm, setSelectedProduct, renderStarRati
 
     const filteredProducts = useMemo(() => {
         return products.filter(product => {
-            const cleanSearchTerm = searchTerm.toLowerCase().replace(/'/g, '');
-            const matchesSearch = product => product.category.toLowerCase().replace(/'/g, '').includes(cleanSearchTerm)
-            const matchesCategory = selectedCategories.length === 0 || selectedCategories.map(c => c.toLowerCase()).includes(product.category.toLowerCase())
-            return products.filter(product => matchesSearch(product) && matchesCategory)
+            const matchesSearch = product.category.toLowerCase().includes(searchTerm.toLowerCase());
+            const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category);
+            return matchesSearch && matchesCategory;
         });
     }, [products, searchTerm, selectedCategories]);
 
